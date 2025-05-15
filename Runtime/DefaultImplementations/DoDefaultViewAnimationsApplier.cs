@@ -5,7 +5,7 @@ using UnityEngine;
 namespace WhiteArrow.ReactiveUI.DoTween
 {
     [Serializable]
-    public class DoDefaultViewAnimationsApplayer
+    public class DoDefaultViewAnimationsApplier
     {
         [Header("Common")]
         [SerializeField, Min(0F)] protected float _screenAnimationsDuration = 0.3F;
@@ -15,18 +15,18 @@ namespace WhiteArrow.ReactiveUI.DoTween
 
 
 
-        public virtual void Aplay()
+        public virtual void Apply()
         {
             foreach (var screen in _screens)
             {
-                var aniamtionModule = new DoDeafultScreenAnimations() { Duration = _screenAnimationsDuration };
-                screen.SetAnimations(aniamtionModule);
+                var animationModule = new DoDefaultScreenAnimations() { Duration = _screenAnimationsDuration };
+                screen.SetAnimations(animationModule);
             }
 
             foreach (var popUp in _popUps)
             {
-                var aniamtionModule = new DoDefaultPopUpAnimations() { Duration = _popUpAnimationsDuration };
-                popUp.SetAnimations(aniamtionModule);
+                var animationModule = new DoDefaultPopUpAnimations() { Duration = _popUpAnimationsDuration };
+                popUp.SetAnimations(animationModule);
             }
         }
     }

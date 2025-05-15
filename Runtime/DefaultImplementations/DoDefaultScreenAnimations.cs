@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace WhiteArrow.ReactiveUI.DoTween
 {
-    public class DoDeafultScreenAnimations : DoViewAnimations
+    public class DoDefaultScreenAnimations : DoViewAnimations
     {
         private CanvasGroup _canvasGroup;
 

@@ -3,7 +3,7 @@ using R3;
 
 namespace WhiteArrow.ReactiveUI.DoTween
 {
-    public abstract class DoViewAnimations : MonoViewAnimations
+    public abstract class DoViewAnimations : MonoUIAnimations
     {
         protected override sealed void PlayShowCore()
         {

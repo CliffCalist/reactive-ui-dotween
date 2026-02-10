@@ -37,6 +37,8 @@ namespace WhiteArrow.ReactiveUI.DoTween
 
         protected override void DOPlayShowCore(Action onComplete)
         {
+            _canvasGroup.alpha = _showStartAlpha;
+
             _lastTween = _canvasGroup
                 .DOFade(_showEndAlpha, _duration)
                 .OnComplete(() => onComplete());
@@ -44,6 +46,8 @@ namespace WhiteArrow.ReactiveUI.DoTween
 
         protected override void DOPlayHideCore(Action onComplete)
         {
+            _canvasGroup.alpha = _hideStartAlpha;
+
             _lastTween = _canvasGroup
                 .DOFade(_hideEndAlpha, _duration)
                 .OnComplete(() => onComplete());

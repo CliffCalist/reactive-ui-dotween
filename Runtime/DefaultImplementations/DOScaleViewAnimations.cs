@@ -36,6 +36,8 @@ namespace WhiteArrow.ReactiveUI.DoTween
 
         protected override void DOPlayShowCore(Action onComplete)
         {
+            _transform.localScale = Vector3.one * _showStartScale;
+
             _lastTween = _transform
                 .DOScale(_showEndScale, _duration)
                 .OnComplete(() => onComplete());
@@ -43,6 +45,8 @@ namespace WhiteArrow.ReactiveUI.DoTween
 
         protected override void DOPlayHideCore(Action onComplete)
         {
+            _transform.localScale = Vector3.one * _hideStartScale;
+
             _lastTween = _transform
                 .DOScale(_hideEndScale, _duration)
                 .OnComplete(() => onComplete());

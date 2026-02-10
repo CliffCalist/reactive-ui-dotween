@@ -11,10 +11,12 @@ namespace WhiteArrow.ReactiveUI.DoTween
         [Space]
         [SerializeField, Min(0F)] private float _showStartScale = 0F;
         [SerializeField, Min(0F)] private float _showEndScale = 1F;
+        [SerializeField] private Ease _showEase = Ease.OutBack;
 
         [Space]
         [SerializeField, Min(0F)] private float _hideStartScale = 1F;
         [SerializeField, Min(0F)] private float _hideEndScale = 0F;
+        [SerializeField] private Ease _hideEase = Ease.InBack;
 
 
 
@@ -40,6 +42,7 @@ namespace WhiteArrow.ReactiveUI.DoTween
 
             _lastTween = _transform
                 .DOScale(_showEndScale, _duration)
+                .SetEase(_showEase)
                 .OnComplete(() => onComplete());
         }
 
@@ -49,6 +52,7 @@ namespace WhiteArrow.ReactiveUI.DoTween
 
             _lastTween = _transform
                 .DOScale(_hideEndScale, _duration)
+                .SetEase(_hideEase)
                 .OnComplete(() => onComplete());
         }
 

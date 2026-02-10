@@ -5,6 +5,12 @@ namespace WhiteArrow.ReactiveUI.DoTween
 {
     public abstract class DoViewAnimations : MonoUIAnimations
     {
+        protected sealed override void StopAllWithoutNotifyCore()
+        {
+            KillLastTweenIfExist();
+        }
+
+
         protected override sealed void PlayShowCore()
         {
             KillLastTweenIfExist();
@@ -22,13 +28,6 @@ namespace WhiteArrow.ReactiveUI.DoTween
         }
 
         protected abstract void DOPlayHideCore(Action onComplete);
-
-
-
-        protected override void DisposeCore()
-        {
-            KillLastTweenIfExist();
-        }
 
 
 

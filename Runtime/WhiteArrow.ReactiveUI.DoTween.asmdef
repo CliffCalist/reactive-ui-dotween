@@ -2,8 +2,8 @@
     "name": "WhiteArrow.ReactiveUI.DoTween",
     "rootNamespace": "WhiteArrow.ReactiveUI.DoTween",
     "references": [
-        "WhiteArrow.ReactiveUI",
-        "DOTween.Modules"
+        "DOTween.Modules",
+        "WhiteArrow.ReactiveUI.Core"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

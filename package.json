@@ -1,7 +1,7 @@
 {
     "name": "com.white-arrow.reactive-ui.dotween",
-    "version": "1.0.0",
-    "displayName": "ReactiveUI.DoTween",
+    "version": "0.2.0-alpha",
+    "displayName": "ReactiveUI.DoTween Alpha",
     "description": "ReactiveUI.DoTween is an optional animation module for ReactiveUI, providing ready-to-use transition effects for screens and popups using DoTween.",
     "licensesUrl": "https://github.com/CliffCalist/reactive-ui-dotween/blob/ac9a045b8cac302690e9213562a1eca5cdde1c4f/LICENSE",
     "author": {

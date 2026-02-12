@@ -4,6 +4,12 @@ Extension package for [ReactiveUI for Unity](https://github.com/CliffCalist/reac
 
 This module provides a minimal set of ready-to-use MonoBehaviour-based animations and a base class for creating custom transitions using DoTween.
 
+> ⚠️ **Documentation Notice**
+>
+> This documentation may be partially outdated and will be revised in an upcoming update.
+>
+> ReactiveUI DoTween Extension is currently in **alpha stage**. The API and behavior may change significantly between versions.
+
 # Features
 
 - Plug-and-play support for `UIView` animations with DoTween

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,8 +26,31 @@ namespace WhiteArrow.ReactiveUI.DoTween
 
 
 
-        protected override void OnViewAttached()
+        protected override bool TryPrepare()
         {
+            var hasProblem = false;
+            var logs = new List<string>();
+
+            if (_panel == null)
+            {
+                hasProblem = true;
+                logs.Add($"The {nameof(_panel)} is not assigned to the {GetType().Name}.");
+            }
+
+            if (_background == null)
+            {
+                hasProblem = true;
+                logs.Add($"The {nameof(_background)} is not assigned to the {GetType().Name}.");
+            }
+
+            if (hasProblem)
+            {
+                foreach (var log in logs)
+                    Debug.LogWarning(log, _view);
+
+                return false;
+            }
+
             if (_view.Visibility.IsSelfShowed.CurrentValue)
             {
                 _panel.localScale = Vector3.one;
@@ -43,6 +67,8 @@ namespace WhiteArrow.ReactiveUI.DoTween
                 backgroundColor.a = 0;
                 _background.color = backgroundColor;
             }
+
+            return true;
         }
 
 

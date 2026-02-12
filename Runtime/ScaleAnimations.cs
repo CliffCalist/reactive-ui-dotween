@@ -18,11 +18,19 @@ namespace WhiteArrow.ReactiveUI.DoTween
 
 
 
-        protected override void OnViewAttached()
+        protected override bool TryPrepare()
         {
+            if (_scalable == null)
+            {
+                Debug.LogWarning($"The {nameof(_scalable)} is not assigned to the {GetType().Name}.", _view);
+                return false;
+            }
+
             _scalable.localScale = _view.Visibility.IsSelfShowed.CurrentValue
                 ? Vector3.one
                 : Vector3.zero;
+
+            return true;
         }
 
 

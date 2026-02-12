@@ -18,9 +18,16 @@ namespace WhiteArrow.ReactiveUI.DoTween
 
 
 
-        protected override void OnViewAttached()
+        protected override bool TryPrepare()
         {
+            if (_canvasGroup == null)
+            {
+                Debug.LogWarning($"The {nameof(_canvasGroup)} is not assigned to the {GetType().Name}.", _view);
+                return false;
+            }
+
             _canvasGroup.alpha = _view.Visibility.IsSelfShowed.CurrentValue ? 1 : 0;
+            return true;
         }
 
 

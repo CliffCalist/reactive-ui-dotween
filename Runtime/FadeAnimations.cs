@@ -5,7 +5,7 @@ using WhiteArrow.ReactiveUI.Core;
 
 namespace WhiteArrow.ReactiveUI.DoTween
 {
-    public class ScreenAnimations : VisibilityAnimations
+    public class FadeAnimations : VisibilityAnimations
     {
         [SerializeField] private CanvasGroup _canvasGroup;
         [SerializeField, Min(0F)] private float _duration = 0.3F;
